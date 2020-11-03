@@ -1,0 +1,96 @@
+<html lang="de-DE">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/general.css">
+		<link rel="stylesheet" href="../css/Details.css">
+		
+		<script type="text/javascript" src="../json/ImgDetails.js"></script>
+		
+    </head>
+
+	<body>
+        
+        <main>
+            <div id="startAnsicht">
+
+				<div class="DivPicture">
+					<a id="BildLink"><img id="Picture" src="" alt=""></a>
+				</div>
+
+				<div class="DetailText">
+
+					<div class="DivTitle">
+						<h1 id="TitleHeader">Titel:</h1>
+						<h2 id="TitleContent"></h2>
+					</div>
+
+					<div class="DivYear">
+						<h1 id="YearHeader">Jahr:</h1>
+						<h2 id="YearContent"></h2>
+					</div>
+
+					<div class="DivFormat">
+						<h1 id="FormatHeader">Format (B x H):</h1>
+						<h2 id="FormatContent"></h2>
+					</div>
+
+					<div class="DivTechnic">
+						<h1 id="TechnicHeader">Technik:</h1>
+						<h2 id="TechnicContent"></h2>
+					</div>
+
+				</div>
+
+				<div class="DetailBilder">
+					
+				</div>
+
+            </div>
+        </main>
+
+	</body>
+
+</html>
+
+<script>
+	
+	var picture = "";
+	var pictureName = ""
+	var bildZahl = null;
+
+	if (window.location.search != '')
+       	var url = window.location.search;
+		var pictureNameArr = url.replace('?var=', '').split("%20")
+		for(var i = 0; i < pictureNameArr.length; i++){
+			pictureName += pictureNameArr[i] + " "
+		}
+		pictureName = pictureName.substring(0,pictureName.length-1)
+	
+	jsonObj = (JSON.parse(data))
+	jsonLength = Object.keys(jsonObj).length
+
+	for (var i = 0; i < jsonLength; i++){
+		if(jsonObj[i].title == pictureName){
+			bildZahl = i
+		}
+	}
+
+	console.log(pictureName)
+
+    document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
+    document.documentElement.style.setProperty('--width', (window.innerWidth-25));
+
+	
+
+	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_mittel.jpg"
+	document.getElementById("TitleContent").innerHTML = jsonObj[bildZahl].title
+	document.getElementById("YearContent").innerHTML = jsonObj[bildZahl].year
+	document.getElementById("FormatContent").innerHTML = jsonObj[bildZahl].format
+	document.getElementById("TechnicContent").innerHTML = jsonObj[bildZahl].technic
+	document.getElementById("BildLink").href= "Großformat.html?var=" + jsonObj[bildZahl].title
+
+</script>
+

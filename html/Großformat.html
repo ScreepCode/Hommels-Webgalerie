@@ -1,0 +1,59 @@
+<html lang="de-DE">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="../css/general.css">
+		<link rel="stylesheet" href="../css/Großformat.css">
+		
+		<script type="text/javascript" src="../json/ImgDetails.js"></script>
+		
+    </head>
+
+	<body>
+        
+        <main>
+            <div id="startAnsicht" class="">
+
+				<img id="Picture" src="" alt="">
+
+            </div>
+        </main>
+
+	</body>
+
+</html>
+
+<script>
+
+	var picture = "";
+	var pictureName = ""
+	var bildZahl = null;
+
+	if (window.location.search != ''){
+       	var url = window.location.search;
+		var pictureNameArr = url.replace('?var=', '').split("%20")
+		for(var i = 0; i < pictureNameArr.length; i++){
+			pictureName += pictureNameArr[i] + " "
+		}
+		pictureName = pictureName.substring(0,pictureName.length-1)
+	}
+
+	jsonObj = (JSON.parse(data))
+	jsonLength = Object.keys(jsonObj).length
+
+	for (var i = 0; i < jsonLength; i++){
+		if(jsonObj[i].title == pictureName){
+			bildZahl = i
+		}
+	}
+
+	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_groß.jpg"
+	
+	document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
+    document.documentElement.style.setProperty('--width', (window.innerWidth-25));
+    console.log(window.innerHeight + " " + window.innerWidth)
+
+</script>
+

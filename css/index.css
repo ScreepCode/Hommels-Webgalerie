@@ -1,0 +1,97 @@
+:root{
+	--heigth: 1;
+	--width: 1;
+}
+
+body{
+	background-image: url("../img/Statisch/Himmelsstudie dunkel Frontbild.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	
+}
+
+
+#TitleDiv{
+	position: absolute;
+	
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 10%;
+
+	text-align: center;
+	font-size: 3vw;
+}
+
+#SubTitleDiv{
+	position: absolute;
+	float: left;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 20%;
+
+	padding: 5%;
+
+	text-align: center;
+	font-size: 3vw;
+}
+
+
+
+
+
+
+
+
+.startImg{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.startName{
+	position: absolute;
+	top: 20%;
+	left: 35%;
+	font-size: 600%;
+	text-align: center;
+}
+
+.startTitle{
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	font-size: 400%;
+	text-align: center;
+}
+
+.startButton{
+	
+	position: absolute;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	margin-bottom: auto;
+	bottom: 10%;
+	text-align: center;
+	
+	width: 30%;
+	height: 20%;
+	font-size: 3vw;;
+	text-align: center;
+	background-color: transparent;
+	border-color: white;
+	border-width: thick;
+	border-radius: 12px;
+	color: white;
+	
+}

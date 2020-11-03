@@ -1,0 +1,26 @@
+
+:root{
+	--heigth: 1;
+	--width: 1;
+}
+
+#Picture{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	height: 600px;
+	width: 800px;
+}
+
+.DetailText{
+	position: absolute;
+	top: 15%;
+	left: 65%;
+}
+
+.weitere{
+	position: absolute;
+	top: 80%;
+	left: 30%;
+	transform: scale(1.5);
+}

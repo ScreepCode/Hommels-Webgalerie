@@ -1,0 +1,10 @@
+:root{
+	--heigth: 1;
+	--width: 1;
+}
+
+#Picture{
+	position: relative;
+	width: var(--width);
+	height: var(--heigth);
+}

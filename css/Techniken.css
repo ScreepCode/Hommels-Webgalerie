@@ -1,0 +1,53 @@
+
+:root{
+	--heigth: 1;
+	--width: 1;
+}
+
+h1{
+	font-size: 100;
+	position: absolute;
+	top: 5%;
+	left: 40%;
+}
+
+h2{
+	font-size: 70;
+	position: absolute;
+}
+
+.ÖlBild{
+	position: absolute;
+	top: 30%;
+	left: 20%;
+}
+
+.AquarellBild{
+	position: absolute;
+	top: 30%;
+	left: 40%;
+}
+
+.ZeichnungenBild{
+	position: absolute;
+	top: 30%;
+	left: 60%;
+}
+
+.ÖlHeader{
+	position: absolute;
+	top: 65%;
+	left: 25%;
+}
+
+.AquarellHeader{
+	position: absolute;
+	top: 65%;
+	left: 40%;
+}
+
+.ZeichnungenHeader{
+	position: absolute;
+	top: 65%;
+	left: 60%;
+}

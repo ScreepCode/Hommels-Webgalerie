@@ -1,0 +1,85 @@
+<html lang="de-DE">
+
+	<head>
+		<title>Bilder</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/general.css">
+		<link rel="stylesheet" href="../css/CMS.css">
+		
+		<script type="text/javascript" src="../json/ImgDetails.js" charset=utf-8></script>
+		
+    </head>
+
+	<body>
+        
+        <main>
+			<div id="pictures">
+				<!--<a href="Details.html"><button>Hier gehts weiter</button></a>-->
+			</div>
+			
+        </main>
+
+	</body>
+
+</html>
+
+<script>
+		
+	jsonObj = (JSON.parse(data))
+	jsonLength = Object.keys(jsonObj).length
+
+	var pictureType = "";
+	if (window.location.search != '')
+       	var url = window.location.search;
+		pictureType = url.replace('?var=', '');
+		//document.write(pictureType)
+		if(pictureType == "%C3%96l"){pictureType = "Öl"}
+
+	for (var i = 0; i < jsonLength; i++){
+		if(jsonObj[i].technic.substring(0,2) == pictureType.substring(0,2)){
+			var picture = document.createElement("img")
+			picture.id = i
+			try {
+				picture.src = "../img/" + jsonObj[i].title.split(' ').join('_') + "_" + jsonObj[i].year.split(' ').join('_') + "_" + jsonObj[i].format.split(' ').join('_') + "_" + jsonObj[i].technic.split(' ').join('_') + "_Kachel.jpg"
+			} catch (error) {
+				break
+			}
+			picture.width = "200"
+			picture.height = "200"
+			picture.style.padding = "16"
+
+			var link = document.createElement("a")
+			link.id = "a" + i
+			link.href = "Details.html?var=" + jsonObj[i].title
+
+			var parentObject = document.getElementById("pictures")
+			parentObject.appendChild(link)
+
+			var parentObject = document.getElementById("a" + i)
+			parentObject.appendChild(picture)
+		}
+	}
+
+
+	/*
+    document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
+    document.documentElement.style.setProperty('--width', (window.innerWidth-25));
+    //console.log(window.innerHeight + " " + window.innerWidth)
+
+
+	for (var i = 0; i <= 36; i++) {
+		var picture = document.createElement("img")
+		picture.id = i + ""
+		picture.src = ""
+		picture.width = "200"
+		picture.height = "200"
+		picture.style.padding = "16"
+				
+		var parentObject = document.getElementById("pictures")
+		parentObject.appendChild(picture)
+	}*/
+
+</script>
+
