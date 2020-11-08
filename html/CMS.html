@@ -35,7 +35,6 @@
        	var url = window.location.search;
 		pictureType = url.replace('?var=', '');
 		//document.write(pictureType)
-		if(pictureType == "%C3%96l"){pictureType = "Öl"}
 
 	for (var i = 0; i < jsonLength; i++){
 		if(jsonObj[i].technic.substring(0,2) == pictureType.substring(0,2)){
