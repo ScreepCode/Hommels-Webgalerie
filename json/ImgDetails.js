@@ -71,5 +71,6 @@ var data = "[" +
         '{"title": "Nagelfluh, Bodelsberg", "year": "2008", "format": "24 x 18 cm", "technic": "Zeichnung Pastellzeichnung auf Ingrespapier"},' + 
         '{"title": "Donaudurchbruch 1", "year": "2009", "format": "32 x 24 cm", "technic": "Zeichnung Pastellzeichnung auf Ingrespapier"},' + 
         '{"title": "Donaudurchbruch 2", "year": "2009", "format": "24 x 32 cm", "technic": "Zeichnung Pastellzeichnung auf Ingrespapier"},' + 
-        '{"title": "Bei Obernbauernschaft", "year": "2001", "format": "24 x 18 cm", "technic": "Zeichnung Tusche und Pastell auf Packpapier"}' + 
+        '{"title": "Bei Obernbauernschaft", "year": "2001", "format": "24 x 18 cm", "technic": "Zeichnung Tusche und Pastell auf Packpapier"},' +
+	'{"title": "Wales; Bucht bei St Annes Head","year": "2018","format": "80 x 60 cm","technic": "Oel auf Leinwand"}' +
         "]"
