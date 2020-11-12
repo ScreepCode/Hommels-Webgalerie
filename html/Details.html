@@ -83,13 +83,19 @@
     document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
     document.documentElement.style.setProperty('--width', (window.innerWidth-25));
 
-	
+	function replaceTitle(string){
+		return string.replace("ae", "ä").replace("ue", "ü").replace("ue", "ü").replace("oe", "ö").replace("sz", "ß").replace("Ae", "Ä").replace("Ue", "Ü").replace("Oe", "Ö").replace("aü", "aue").replace("Aü", "Aue")
+	}
+
+	function replaceTechnic(string){
+		return string.replace("Zeichnung ", "").replace("Oe", "Ö")
+	}
 
 	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_mittel.jpg"
-	document.getElementById("TitleContent").innerHTML = jsonObj[bildZahl].title
+	document.getElementById("TitleContent").innerHTML = replaceTitle(jsonObj[bildZahl].title)
 	document.getElementById("YearContent").innerHTML = jsonObj[bildZahl].year
 	document.getElementById("FormatContent").innerHTML = jsonObj[bildZahl].format
-	document.getElementById("TechnicContent").innerHTML = jsonObj[bildZahl].technic
+	document.getElementById("TechnicContent").innerHTML = replaceTechnic(jsonObj[bildZahl].technic)
 	document.getElementById("BildLink").href= "Großformat.html?var=" + jsonObj[bildZahl].title
 
 </script>
