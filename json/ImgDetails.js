@@ -96,7 +96,7 @@ var data = "[" +
         '{"title": "Haus des Gastes in Porta Westfalica", "year": "1985", "format": "40 x 30 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Winterhof", "year": "1991", "format": "30 x 24 cm", "technic": "Zeichnung Kohlezeichnung"},' + 
         '{"title": "Meszlingen Dorfstraszenecke", "year": "1985", "format": "32 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
-        '{"title": "Haus eines Spieszbuergers", "year": "1985", "format": "30 x 24 cm", "technic": "Zeichnung_Federzeichnung"},' + 
+        '{"title": "Haus eines Spieszbuergers", "year": "1985", "format": "30 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Im Dorf", "year": "1985", "format": "30 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Meszlinger Muehle", "year": "1987", "format": "30 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Schloss Petershagen", "year": "1985", "format": "30 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
