@@ -39,10 +39,17 @@
 	-o-transition: all 0.3s linear;
 	transition: all 0.3s linear;
 }
+
 .DivPicture img:hover {
 	-webkit-transform: scale(1.01);
 	-moz-transform: scale(1.01);
 	-ms-transform: scale(1.01);
 	-o-transform: scale(1.01);
 	transform: scale(1.01);
+}
+
+.DetailBilder{
+	position: absolute;
+	top: 80%;
+	left: 30%;
 }
