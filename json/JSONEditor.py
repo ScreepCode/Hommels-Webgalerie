@@ -67,6 +67,52 @@ class JSONTool(object):
         out += '        "]"'
         f.write(out)
 
+    def deleteJSON(self, title):
+        jsonData = self.openJSON()
+        tempJSON = []
+
+        for x in jsonData:
+            if(x["title"] != title):
+                tempJSON.append(str(x))
+
+        f = open(self.dateipfad, "w")
+        out = '\nvar test = "[" + \n'
+        for x in tempJSON:
+            y = str(x).replace("'", '"')
+            out +=  "        '" + y + ",' + \n"
+        out = out[:-6] + "' + \n"   
+        out += '        "]"'
+        f.write(out)
+
+    def appendNewJSONWithPictureName(self, pictureName):
+
+        pictureNameSplit = pictureName.split("_")
+
+        title = ""
+        year = ""
+        format = ""
+        technic = ""
+
+        next = 0
+
+        for x in range(len(pictureNameSplit)):
+            if len(pictureNameSplit[x]) != 4:
+                title += pictureNameSplit[x] + " "
+            else:
+                next = x
+                break
+
+        year = pictureNameSplit[next]
+        next += 1
+        formatArr = pictureNameSplit[next:(next+4)]
+        format = " ".join(formatArr)
+        next += 4
+        technicArr = pictureNameSplit[next:]
+        technic = " ".join(technicArr)
+        
+        jsonData = '{"title": "'+ title[:-1] +'", "year": "'+ year +'", "format": "'+ format +'", "technic": "'+ technic +'"}'
+        self.appendNewJSON(jsonData)
+
 class JSONOpen(QWidget):
     def __init__(self):
         super().__init__()
