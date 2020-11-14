@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import *
 class JSONTool(object):
     def __init__(self):
        self.dateipfad = os.path.abspath(".")+ "/ImgDetails.js"
+       #self.dateipfad = os.path.abspath(".")+ "/json.js"
        #self.dateipfad = "Users/detlefhommel/Desktop/WebSeites/json/ImgDetails.js"
     
     def openJSON(self):
@@ -67,16 +68,33 @@ class JSONTool(object):
         out += '        "]"'
         f.write(out)
 
-    def deleteJSON(self, title):
+    # def deleteJSON(self, title):
+    #     jsonData = self.openJSON()
+    #     tempJSON = []
+
+    #     for x in jsonData:
+    #         if(x["title"] != title):
+    #             tempJSON.append(str(x))
+
+    #     f = open(self.dateipfad, "w")
+    #     out = '\nvar test = "[" + \n'
+    #     for x in tempJSON:
+    #         y = str(x).replace("'", '"')
+    #         out +=  "        '" + y + ",' + \n"
+    #     out = out[:-6] + "' + \n"   
+    #     out += '        "]"'
+    #     f.write(out)
+
+    def deleteJSON(self, index):
         jsonData = self.openJSON()
         tempJSON = []
 
-        for x in jsonData:
-            if(x["title"] != title):
-                tempJSON.append(str(x))
+        for x in range(len(jsonData)):
+            if(x != index):
+                tempJSON.append(str(jsonData[x]))
 
         f = open(self.dateipfad, "w")
-        out = '\nvar test = "[" + \n'
+        out = '\nvar data = "[" + \n'
         for x in tempJSON:
             y = str(x).replace("'", '"')
             out +=  "        '" + y + ",' + \n"
@@ -84,7 +102,36 @@ class JSONTool(object):
         out += '        "]"'
         f.write(out)
 
-    def appendNewJSONWithPictureName(self, pictureName):
+    # def appendNewJSONWithPictureName(self, pictureName):
+
+    #     pictureNameSplit = pictureName.split("_")
+
+    #     title = ""
+    #     year = ""
+    #     format = ""
+    #     technic = ""
+
+    #     next = 0
+
+    #     for x in range(len(pictureNameSplit)):
+    #         if len(pictureNameSplit[x]) != 4:
+    #             title += pictureNameSplit[x] + " "
+    #         else:
+    #             next = x
+    #             break
+
+    #     year = pictureNameSplit[next]
+    #     next += 1
+    #     formatArr = pictureNameSplit[next:(next+4)]
+    #     format = " ".join(formatArr)
+    #     next += 4
+    #     technicArr = pictureNameSplit[next:]
+    #     technic = " ".join(technicArr)
+        
+    #     jsonData = '{"title": "'+ title[:-1] +'", "year": "'+ year +'", "format": "'+ format +'", "technic": "'+ technic +'"}'
+    #     self.appendNewJSON(jsonData)
+    
+    def JSONWithPictureName(self, pictureName):
 
         pictureNameSplit = pictureName.split("_")
 
@@ -109,9 +156,14 @@ class JSONTool(object):
         next += 4
         technicArr = pictureNameSplit[next:]
         technic = " ".join(technicArr)
-        
-        jsonData = '{"title": "'+ title[:-1] +'", "year": "'+ year +'", "format": "'+ format +'", "technic": "'+ technic +'"}'
-        self.appendNewJSON(jsonData)
+
+        data = []
+        data.append(title)
+        data.append(year)
+        data.append(format)
+        data.append(technic)
+
+        return data
 
 class JSONOpen(QWidget):
     def __init__(self):
@@ -139,7 +191,6 @@ class JSONOpen(QWidget):
         self.button4 = QPushButton("Neuen JSON String mit Bildtitel hinzufügen", self)
         self.button4.move(50, 400)
         self.button4.resize(300, 50)
-        
 
 class JSONAdd(QWidget):
     def __init__(self):
@@ -258,7 +309,6 @@ class JSONEditTable(QWidget):
             self.table.setItem(row, 2, QTableWidgetItem(str(x["format"])))
             self.table.setItem(row, 3, QTableWidgetItem(str(x["technic"])))
         self.table.resizeColumnsToContents()
-    
 
 class JSONEditString(QWidget):
     def __init__(self):
@@ -360,9 +410,16 @@ class JSONDelete(QWidget):
         self.table.setColumnCount(4)
         self.table.setHorizontalHeaderLabels(["Title", "Year", "Format", "Technic"])
 
-        self.button = QPushButton("Ausgewählte Reihe ändern", self)
+        self.button = QPushButton("Reihe Auswählen", self)
         self.button.move(50, 500)
         self.button.resize(300, 50)
+        self.button.clicked.connect(self.pick_row)
+
+        self.button2 = QPushButton("Reihe löschen", self)
+        self.button2.move(360, 500)
+        self.button2.resize(300, 50)
+        self.button2.clicked.connect(self.call_delete)
+        self.button2.setEnabled(False)
 
         self.label = QLabel("", self)
         self.label.move(50, 550)
@@ -388,13 +445,128 @@ class JSONDelete(QWidget):
             self.table.setItem(row, 3, QTableWidgetItem(str(x["technic"])))
         self.table.resizeColumnsToContents()
 
+    def pick_row(self):
+        indexes = self.table.selectionModel().selectedRows()
+        if len(indexes) > 0:
+            for index in sorted(indexes):
+                #print('Row %d is selected' % index.row())
+                self.selectedRow = (int("%d" % index.row()))
+                self.button2.setText("Reihe " + str(self.selectedRow+1) + " löschen")
+                self.button2.setEnabled(True)
+
+    def call_delete(self):
+        self.tool.deleteJSON(self.selectedRow)
+        self.button2.setEnabled(False)
+        self.button2.setText("Reihe löschen")
+        self.addTableRow()
+
+class JSONAddWT(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.title = "JSON Parser"
+        self.initUI()
+
+        self.tool = JSONTool()
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(100, 100, 400, 600)
+
+        #Textfelder
+        self.textbox1 = QLineEdit(self)
+        self.textbox1.move(50,325)
+        self.textbox1.resize(300, 20)
+
+        self.textbox2 = QLineEdit(self)
+        self.textbox2.move(50,375)
+        self.textbox2.resize(300, 20)
+
+        self.textbox3 = QLineEdit(self)
+        self.textbox3.move(50,425)
+        self.textbox3.resize(300, 20)
+
+        self.textbox4 = QLineEdit(self)
+        self.textbox4.move(50,475)
+        self.textbox4.resize(300, 20)
+
+        self.textbox5 = QLineEdit(self)
+        self.textbox5.move(50, 130)
+        self.textbox5.resize(300, 50)
+
+        #Button
+        self.button = QPushButton("Bestätigen", self)
+        self.button.move(50, 500)
+        self.button.resize(300, 30)
+        self.button.clicked.connect(self.on_button_clicked)
+        self.button.setEnabled(False)
+
+        self.button2 = QPushButton("Laden", self)
+        self.button2.move(50, 200)
+        self.button2.resize(300, 50)
+        self.button2.clicked.connect(self.on_load)
+
+        #Label
+        self.label1 = QLabel("Title", self)
+        self.label1.move(50, 300)
+        self.label1.setFont(QFont("Arial", 14))
+
+        self.label2 = QLabel("Year", self)
+        self.label2.move(50, 350)
+        self.label2.setFont(QFont("Arial", 14))
+
+        self.label3 = QLabel("Format", self)
+        self.label3.move(50, 400)
+        self.label3.setFont(QFont("Arial", 14))
+
+        self.label4 = QLabel("Technic", self)
+        self.label4.move(50, 450)
+        self.label4.setFont(QFont("Arial", 14))
+
+        self.label5 = QLabel("", self)
+        self.label5.move(50, 550)
+        self.label5.setFont(QFont("Arial", 10))
+        self.label5.resize(300, 50)
+
+        self.label6 = QLabel("Bildname:", self)
+        self.label6.move(50, 100)
+        self.label6.setFont(QFont("Arial", 18))
+
+
+        self.homeButton = QPushButton("Home", self)
+        self.homeButton.move(0, 0)
+        self.homeButton.resize(60, 25)
+
+    def on_load(self):
+
+        data = self.tool.JSONWithPictureName(self.textbox5.text())
+
+        self.textbox1.setText(data[0])
+        self.textbox2.setText(data[1])
+        self.textbox3.setText(data[2])
+        self.textbox4.setText(data[3])
+
+        self.button.setEnabled(True)
+
+    def on_button_clicked(self):
+        if(self.textbox1.text() != "" and self.textbox2.text() != "" and self.textbox3.text() != "" and self.textbox4.text() != ""):
+            jsonData = '{"title": "'+ self.textbox1.text() +'", "year": "'+ self.textbox2.text() +'", "format": "'+ self.textbox3.text() +'", "technic": "'+ self.textbox4.text() +'"}'
+            self.tool.appendNewJSON(jsonData)
+            self.textbox1.setText("")
+            self.textbox2.setText("")
+            self.textbox3.setText("")
+            self.textbox4.setText("")
+            self.textbox5.setText("")
+            self.label5.setText("JSON String erfolgreich erstellt und hinzugefügt")
+        else:
+            self.label5.setText("Bitte fülle alle Felder aus")
+
 if __name__ == "__main__":
     App = QApplication(sys.argv)
 
     openGui = JSONOpen()
     addGui = JSONAdd()
     delGui = JSONDelete()
-    #addwTGui = JSONAddWT()
+    addwTGui = JSONAddWT()
     editTableGui = JSONEditTable()
     editStringGui = JSONEditString()
 
@@ -478,6 +650,7 @@ if __name__ == "__main__":
     editStringGui.homeButton.clicked.connect(on_click_home)
     addGui.homeButton.clicked.connect(on_click_home)
     delGui.homeButton.clicked.connect(on_click_home)
+    addwTGui.homeButton.clicked.connect(on_click_home)
 
 
 
