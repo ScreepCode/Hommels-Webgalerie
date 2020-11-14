@@ -131,6 +131,15 @@ class JSONOpen(QWidget):
         self.button2 = QPushButton("Bestehenden JSON String bearbeiten", self)
         self.button2.move(50, 200)
         self.button2.resize(300, 50)
+        
+        self.button3 = QPushButton("Bestehenden JSON String entfernen", self)
+        self.button3.move(50, 300)
+        self.button3.resize(300, 50)
+
+        self.button4 = QPushButton("Neuen JSON String mit Bildtitel hinzufügen", self)
+        self.button4.move(50, 400)
+        self.button4.resize(300, 50)
+        
 
 class JSONAdd(QWidget):
     def __init__(self):
@@ -263,7 +272,6 @@ class JSONEditString(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(100, 100, 450, 600)
 
-
         #Textfelder
         self.textbox1 = QLineEdit(self)
         self.textbox1.move(50,100)
@@ -335,12 +343,58 @@ class JSONEditString(QWidget):
             self.label5.setText("Es darf kein Textfeld leer sein")
             return False
 
+class JSONDelete(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.title = "JSON Parser"
+        self.initUI()
+
+        self.tool = JSONTool()
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(100, 100, 700, 600)
+
+        self.table = QTableWidget(self)
+        self.table.resize(700, 500)
+        self.table.setColumnCount(4)
+        self.table.setHorizontalHeaderLabels(["Title", "Year", "Format", "Technic"])
+
+        self.button = QPushButton("Ausgewählte Reihe ändern", self)
+        self.button.move(50, 500)
+        self.button.resize(300, 50)
+
+        self.label = QLabel("", self)
+        self.label.move(50, 550)
+        self.label.setFont(QFont("Arial", 10))
+        self.label.resize(300, 50)
+
+        self.homeButton = QPushButton("Home", self)
+        self.homeButton.move(0, 0)
+        self.homeButton.resize(60, 25)
+
+    def addTableRow(self):
+        while (self.table.rowCount() > 0):
+            self.table.removeRow(0)
+
+        jsonData = self.tool.openJSON()
+
+        for x in jsonData:
+            row = self.table.rowCount()
+            self.table.setRowCount(row+1)
+            self.table.setItem(row, 0, QTableWidgetItem(str(x["title"])))
+            self.table.setItem(row, 1, QTableWidgetItem(str(x["year"])))
+            self.table.setItem(row, 2, QTableWidgetItem(str(x["format"])))
+            self.table.setItem(row, 3, QTableWidgetItem(str(x["technic"])))
+        self.table.resizeColumnsToContents()
 
 if __name__ == "__main__":
     App = QApplication(sys.argv)
 
     openGui = JSONOpen()
     addGui = JSONAdd()
+    delGui = JSONDelete()
+    #addwTGui = JSONAddWT()
     editTableGui = JSONEditTable()
     editStringGui = JSONEditString()
 
@@ -351,6 +405,15 @@ if __name__ == "__main__":
     def on_click_edit():
         editTableGui.show()
         editTableGui.addTableRow()
+        openGui.hide()
+
+    def on_click_del():
+        delGui.show()
+        delGui.addTableRow()
+        openGui.hide()
+
+    def on_click_edit_wT():
+        addwTGui.show()
         openGui.hide()
 
     def on_click_home():
@@ -365,6 +428,14 @@ if __name__ == "__main__":
             pass
         try:
             addGui.hide()
+        except:
+            pass
+        try:
+            delGui.hide()
+        except:
+            pass
+        try:
+            addwTGui.hide()
         except:
             pass
 
@@ -398,12 +469,15 @@ if __name__ == "__main__":
 
     openGui.button1.clicked.connect(on_click_add)
     openGui.button2.clicked.connect(on_click_edit)
+    openGui.button3.clicked.connect(on_click_del)
+    openGui.button4.clicked.connect(on_click_edit_wT)
     editTableGui.button.clicked.connect(on_click_editRow)
     editStringGui.button.clicked.connect(on_click_editString)
 
     editTableGui.homeButton.clicked.connect(on_click_home)
     editStringGui.homeButton.clicked.connect(on_click_home)
     addGui.homeButton.clicked.connect(on_click_home)
+    delGui.homeButton.clicked.connect(on_click_home)
 
 
 
