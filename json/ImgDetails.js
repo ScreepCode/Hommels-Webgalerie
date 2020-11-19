@@ -32,7 +32,7 @@ var data = "[" +
         '{"title": "Himmelsstudie", "year": "2004", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Mein Schulweg", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Schneestudie Wiehengebirge", "year": "2017", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Schuppen zwischen Heimsen und Döhren", "year": "2005", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Schuppen zwischen Heimsen und Doehren", "year": "2005", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Kraulschwimmer", "year": "1983", "format": "105 x 74 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Handballer beim Sprungwurf", "year": "1984", "format": "80 x 100 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Teufelsmoor mit Moorgraben", "year": "2016", "format": "90 x 60 cm", "technic": "Oel auf Leinwand"},' + 
