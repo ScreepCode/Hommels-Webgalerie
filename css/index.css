@@ -8,8 +8,6 @@ body{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
-	
 }
 
 
@@ -24,18 +22,28 @@ body{
 	top: 10%;
 
 	text-align: center;
-	font-size: 3vw;
+	font-size: 4vw;
 }
 
 #SubTitleDiv{
 	position: absolute;
 	float: left;
-	margin-top: auto;
+	margin-top: 2%;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	top: 20%;
+	top: 30%;
+
+	padding: 5%;
+
+	text-align: center;
+	font-size: 2vw;
+}
+
+#LinksDiv a{
+	color: white ;
+	text-decoration: none;
 
 	padding: 5%;
 
@@ -43,14 +51,26 @@ body{
 	font-size: 3vw;
 }
 
+#LinksDiv #VI{
+	position: absolute;
+	top: 75%;
+	left: 5%;
+}
+
+#LinksDiv #T{
+	position: absolute;
+	top: 75%;
+	left: 40%;
+}
+
+#LinksDiv #M{
+	position: absolute;
+	top: 75%;
+	left: 70%;
+}
 
 
-
-
-
-
-
-.startImg{
+/* .startImg{
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -94,4 +114,4 @@ body{
 	border-radius: 12px;
 	color: white;
 	
-}
+} */
