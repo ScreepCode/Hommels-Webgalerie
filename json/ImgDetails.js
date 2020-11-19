@@ -100,7 +100,7 @@ var data = "[" +
         '{"title": "Meszlingen Dorfstraszenecke II", "year": "1985", "format": "32 x 24 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Selbstbildnis II", "year": "1968", "format": "24 x 32 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
         '{"title": "Blick auf Eldagsen an Pfingsten", "year": "1982", "format": "30 x 24 cm", "technic": "Aquarell"},' + 
-        '{"title": "El Qusir - Wasserverkauf an der Strasze", "year": "2003", "format": "30 x 40 cm", "technic": "Zeichnung Federzeichnung mit Pastell gehöht"},' + 
+        '{"title": "El Qusir - Wasserverkauf an der Strasze", "year": "2003", "format": "30 x 40 cm", "technic": "Zeichnung Federzeichnung mit Pastell gehoeht"},' + 
         '{"title": "Erster Hof in Ostwestfalen", "year": "1979", "format": "20 x 15 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
         '{"title": "Gelbe Saecke", "year": "2004", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Kerzenhalter und Apfel Studie", "year": "2012", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
