@@ -1,0 +1,62 @@
+<html lang="de-DE">
+
+<head>
+    <title>Bilder</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/Museum.css">
+
+    <script type="text/javascript" src="../json/Museum.js" charset=utf-8></script>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="javascript:history.go(-1)" class="right">zurück</a>
+    </div>
+
+    <main>
+        <div id="Header">
+            <h3 id="heading">Im Museum</h3>
+        </div>
+
+        <div id="pictures"></div>
+
+
+
+    </main>
+
+</body>
+
+</html>
+
+<script>
+
+    jsonObj = (JSON.parse(data))
+    jsonLength = Object.keys(jsonObj).length
+
+    for (var i = 0; i < jsonLength; i++) {
+        var picture = document.createElement("img")
+        picture.id = i
+        try {
+            picture.src = "../img/Museum" + jsonObj[i].title.split(' ').join('_') + "_" + jsonObj[i].year.split(' ').join('_') + "_" + jsonObj[i].format.split(' ').join('_') + "_" + jsonObj[i].technic.split(' ').join('_') + "_MKachel.jpg"
+        } catch (error) {
+            break
+        }
+        
+        var link = document.createElement("a")
+        link.id = "a" + i
+        link.href = "Details.html?var=" + jsonObj[i].title
+
+        var parentObject = document.getElementById("pictures")
+        parentObject.appendChild(link)
+
+        var parentObject = document.getElementById("a" + i)
+        parentObject.appendChild(picture)
+    }
+
+</script>
