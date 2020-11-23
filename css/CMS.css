@@ -1,10 +1,4 @@
 
-:root{
-	--heigth: 1;
-	--width: 1;
-}
-
-
 #pictures img {
 	/* SCALE */
 	-webkit-transform: scale(1);

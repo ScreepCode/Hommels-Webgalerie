@@ -1,9 +1,4 @@
 
-:root{
-	--heigth: 1;
-	--width: 1;
-}
-
 #Picture{
 	position: absolute;
 	top: 10%;
