@@ -55,7 +55,7 @@
 		}
 	}
 
-	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_groß.jpg"
+	document.getElementById("Picture").src = "../img/CMS/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_groß.jpg"
 	document.getElementById("Titel").innerHTML = replaceTitle(jsonObj[bildZahl].title)
 
 	function replaceTitle(string){
