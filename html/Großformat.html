@@ -14,16 +14,16 @@
 	<body>
         
         <main>
-
 			<div class="navbar">
 				<a href="index.html">Home</a>
 				<a href="javascript:history.go(-1)" class="right">zurück</a>
 			</div>
 
             <div id="startAnsicht" class="">
-
-				<img id="Picture" src="" alt="">
-
+				<div>
+					<img id="Picture" src="" alt="">
+				</div>
+				<div><p id="Titel"></p></div>
             </div>
         </main>
 
@@ -56,7 +56,12 @@
 	}
 
 	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_groß.jpg"
-	
+	document.getElementById("Titel").innerHTML = replaceTitle(jsonObj[bildZahl].title)
+
+	function replaceTitle(string){
+		return string.replace("ae", "ä").replace("ue", "ü").replace("ue", "ü").replace("oe", "ö").replace("sz", "ß").replace("Ae", "Ä").replace("Ue", "Ü").replace("Oe", "Ö").replace("aü", "aue").replace("Aü", "Aue")
+	}
+
 	document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
     document.documentElement.style.setProperty('--width', (window.innerWidth-25));
     console.log(window.innerHeight + " " + window.innerWidth)

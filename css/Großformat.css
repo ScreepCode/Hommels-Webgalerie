@@ -1,14 +1,26 @@
 
+#startAnsicht{
+	position: static;
+	display: flex;
+	justify-content : center;
+	align-items: flex-end;
+	margin-bottom: 0.1vw;
+}
+
 #Picture{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: auto;
-	height: 100%;
+	height: 49vw;
 }
 
 .navbar {
-
 	overflow: visible;
+}
 
+#Titel{
+	margin-left: 3vw;
+	font-size: 1vw;
+	text-align: left;
 }
