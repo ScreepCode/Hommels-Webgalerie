@@ -13,8 +13,17 @@
     </head>
 
 	<body>
-        
+
+		<div class="navbar">
+			<a href="index.html">Home</a>
+			<a href="javascript:history.go(-1)" class="right">zurück</a>
+		</div>
+		
         <main>
+			<div id="Header">
+				<h3 id="heading"></h3>
+			</div>
+
 			<div id="pictures">
 				<!--<a href="Details.html"><button>Hier gehts weiter</button></a>-->
 			</div>
@@ -60,6 +69,7 @@
 			parentObject.appendChild(picture)
 		}
 	}
+	document.getElementById("heading").innerHTML = pictureType.replace("Oel", "Ölgemälde")
 
 
 	/*
