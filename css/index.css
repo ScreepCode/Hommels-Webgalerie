@@ -42,9 +42,14 @@ body{
 	text-decoration: none;
 
 	padding: 5%;
-
 	text-align: center;
 	font-size: 3vw;
+
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
 }
 
 #LinksDiv #VI{
@@ -63,6 +68,14 @@ body{
 	position: absolute;
 	top: 75%;
 	left: 70%;
+}
+
+#LinksDiv a:hover{
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 
