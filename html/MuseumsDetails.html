@@ -1,0 +1,150 @@
+<html lang="de-DE">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/general.css">
+		<link rel="stylesheet" href="../css/MuseumsDetails.css">
+		
+		<script type="text/javascript" src="../json/Museum.js"></script>
+		
+    </head>
+
+	<body>
+        
+        <main>
+
+			<div class="navbar">
+				<a href="index.html">Home</a>
+				<a href="javascript:history.go(-1)" class="right">zurück</a>
+			</div>
+
+            <div id="startAnsicht">
+
+				<div class="DivPicture">
+					<a id="BildLink"><img id="Picture" src="" alt=""></a>
+				</div>
+
+				<div class="DetailText">
+
+					<div class="DivTitle">
+						<h1 id="TitleHeader">Titel:</h1>
+						<h2 id="TitleContent"></h2>
+					</div>
+
+					<div class="DivYear">
+						<h1 id="YearHeader">Jahr:</h1>
+						<h2 id="YearContent"></h2>
+					</div>
+
+					<div class="DivFormat">
+						<h1 id="FormatHeader">Format (B x H):</h1>
+						<h2 id="FormatContent"></h2>
+					</div>
+
+					<div class="DivTechnic">
+						<h1 id="TechnicHeader">Technik:</h1>
+						<h2 id="TechnicContent"></h2>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<div class="DetailBilder">
+				<button id="left" onclick="setDetailPictures('-')"><</button>
+				<a id="Kachel1Link"><img id="Kachel1" src=""></a>
+				<a id="Kachel2Link"><img id="Kachel2" src=""></a>
+				<a id="Kachel3Link"><img id="Kachel3" src=""></a>
+				<a id="Kachel4Link"><img id="Kachel4" src=""></a>
+				<a id="Kachel5Link"><img id="Kachel5" src=""></a>
+				<button id="right" onclick="setDetailPictures('+')">></button>
+			</div>
+			
+        </main>
+
+	</body>
+
+</html>
+
+<script>
+
+	window.onload = function(){
+		setDetailPictures()
+	}
+	
+	var picture = "";
+	var pictureName = ""
+	var bildZahl = null;
+
+	if (window.location.search != '')
+       	var url = window.location.search;
+		var pictureNameArr = url.replace('?var=', '').split("%20")
+		for(var i = 0; i < pictureNameArr.length; i++){
+			pictureName += pictureNameArr[i] + " "
+		}
+		pictureName = pictureName.substring(0,pictureName.length-1)
+	
+	jsonObj = (JSON.parse(data))
+	jsonLength = Object.keys(jsonObj).length
+
+	for (var i = 0; i < jsonLength; i++){
+		if(jsonObj[i].title == pictureName){
+			bildZahl = i
+		}
+	}
+
+	var technicIndexArr = []
+	for(var i = 0; i < jsonLength; i++){
+		if(jsonObj[i].technic.substring(0, 2) == jsonObj[bildZahl].technic.substring(0,2)){
+			technicIndexArr.push(i)
+		}
+		if(i == bildZahl){
+			var akt_mitte = technicIndexArr.length-1
+		}
+	}
+
+	function replaceTitle(string){
+		return string.replace("ae", "ä").replace("ue", "ü").replace("ue", "ü").replace("oe", "ö").replace("sz", "ß").replace("Ae", "Ä").replace("Ue", "Ü").replace("Oe", "Ö").replace("aü", "aue").replace("Aü", "Aue")
+	}
+
+	function replaceTechnic(string){
+		return string.replace("Zeichnung ", "").replace("Oe", "Ö")
+	}
+
+	document.getElementById("Picture").src = "../img/Museum/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_Mmittel.jpg"
+	document.getElementById("TitleContent").innerHTML = replaceTitle(jsonObj[bildZahl].title)
+	document.getElementById("YearContent").innerHTML = jsonObj[bildZahl].year
+	document.getElementById("FormatContent").innerHTML = jsonObj[bildZahl].format
+	document.getElementById("TechnicContent").innerHTML = replaceTechnic(jsonObj[bildZahl].technic)
+
+	function setDetailPictures(richtung){
+		if(richtung == '+'){
+			akt_mitte += 1
+		}
+		else if(richtung == '-'){
+			akt_mitte -= 1
+		}
+
+		tmp = akt_mitte - 2
+
+		if(tmp < 0){
+			tmp = technicIndexArr.length+tmp
+		}
+
+		for(var i = 1; i < 6; i++){
+			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_MKachel.jpg"
+			document.getElementById("Kachel" + i + "Link").href = "MuseumsDetails.html?var=" + jsonObj[technicIndexArr[tmp]].title
+
+			if(tmp+1 == technicIndexArr.length){
+				tmp = 0
+			}
+			else{
+				tmp += 1
+			}
+		}
+	}
+
+</script>
+
