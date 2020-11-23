@@ -85,6 +85,8 @@
 			pictureName += pictureNameArr[i] + " "
 		}
 		pictureName = pictureName.substring(0,pictureName.length-1)
+
+		console.log(pictureName)
 	
 	jsonObj = (JSON.parse(data))
 	jsonLength = Object.keys(jsonObj).length
@@ -134,7 +136,7 @@
 		}
 
 		for(var i = 1; i < 6; i++){
-			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_MKachel.jpg"
+			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_MK.jpg"
 			document.getElementById("Kachel" + i + "Link").href = "MuseumsDetails.html?var=" + jsonObj[technicIndexArr[tmp]].title
 
 			if(tmp+1 == technicIndexArr.length){
