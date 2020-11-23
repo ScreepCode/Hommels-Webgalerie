@@ -79,13 +79,12 @@
 }
 
 .DivPicture img {
-	/* SCALE */
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
 	-o-transform: scale(1);
 	transform: scale(1);
-	/* VERZÖGERUNG */
+
 	-webkit-transition: all 0.3s linear;
 	-moz-transition: all 0.3s linear;
 	-ms-transition: all 0.3s linear;
@@ -100,30 +99,3 @@
 	-o-transform: scale(1.01);
 	transform: scale(1.01);
 }
-
-/*#Picture{
-	position: absolute;
-	top: 10%;
-	left: 10%;
-	height: 600px;
-	width: auto;
-}
-
-.DetailText{
-	position: absolute;
-	top: 15%;
-	left: 65%;
-}
-
-.weitere{
-	position: absolute;
-	top: 80%;
-	left: 30%;
-	transform: scale(1.5);
-}
-
-.DetailBilder{
-	position: absolute;
-	top: 80%;
-	left: 30%;
-}*/

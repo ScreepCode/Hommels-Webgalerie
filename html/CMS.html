@@ -20,16 +20,13 @@
 		</div>
 		
         <main>
+
 			<div id="Header">
 				<h3 id="heading"></h3>
 			</div>
 
-			<div id="pictures">
-				<!--<a href="Details.html"><button>Hier gehts weiter</button></a>-->
-			</div>
+			<div id="pictures"></div>
 
-			
-			
         </main>
 
 	</body>
@@ -71,26 +68,8 @@
 			parentObject.appendChild(picture)
 		}
 	}
+	
 	document.getElementById("heading").innerHTML = pictureType.replace("Oel", "Ölgemälde")
-
-
-	/*
-    document.documentElement.style.setProperty('--heigth', (window.innerHeight-25));
-    document.documentElement.style.setProperty('--width', (window.innerWidth-25));
-    //console.log(window.innerHeight + " " + window.innerWidth)
-
-
-	for (var i = 0; i <= 36; i++) {
-		var picture = document.createElement("img")
-		picture.id = i + ""
-		picture.src = ""
-		picture.width = "200"
-		picture.height = "200"
-		picture.style.padding = "16"
-				
-		var parentObject = document.getElementById("pictures")
-		parentObject.appendChild(picture)
-	}*/
 
 </script>
 
