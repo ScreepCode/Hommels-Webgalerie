@@ -1,0 +1,54 @@
+
+.navbar a{
+    color: black;
+    overflow: visible;
+}
+
+body{
+	background-image: url("../img/Statisch/Impressumshintergrund Heller Himmel.png");
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#startAnsicht{
+	position: static;
+    display: flex;
+    margin-bottom: 20px;
+
+    color: black;
+}
+
+#startAnsicht p{
+    font-size: 1.3vw;
+}
+
+#startAnsicht h1{
+    font-size: 2vw;
+}
+
+.Vita{
+    margin-top: 9vw;
+    margin-left: 5vw;
+}
+
+#VitaPic{
+    position: absolute;
+    height: 10vw;
+    margin-top: 2vw;
+    margin-left: 10vw;
+}
+
+.Ausstellungen{
+    margin-top: 9vw;
+    margin-left: 17vw;
+}
+
+.Rest{
+    margin-top: 9vw;
+    margin-left: 20vw;
+}
+
+.Rest div{
+    margin-bottom: 10vw;
+}
