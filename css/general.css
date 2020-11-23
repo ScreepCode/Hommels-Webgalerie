@@ -8,16 +8,6 @@ main{
     color: white ;
 }
 
-#heading{
-    font-size: 3vw;
-    position: static;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
 .navbar {
     overflow: hidden;
     top: 0;
