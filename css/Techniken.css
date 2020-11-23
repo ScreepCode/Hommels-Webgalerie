@@ -1,17 +1,66 @@
 
 h1{
-	font-size: 100;
-	position: absolute;
-	top: 5%;
-	left: 40%;
+    font-size: 7vw;
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vw;
+    margin-bottom: 20px;
 }
 
-h2{
-	font-size: 70;
-	position: absolute;
+.box{
+	padding: 1.5vw;
+	float: left;
+	margin-right: 1vw;
+	box-sizing: border-box;
 }
 
-.ÖlBild{
+.box:last-child {
+	margin-right: 0;
+}
+
+.box h2{
+	text-align: center;
+	font-size: 3vw;
+}
+
+#startAnsicht{
+	position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+    margin-bottom: 20px;
+}
+
+#startAnsicht img {
+	height: 19vw;
+}
+
+#startAnsicht img {
+	/* SCALE */
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	/* VERZÖGERUNG */
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+#startAnsicht img:hover {
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+/*.ÖlBild{
 	position: absolute;
 	top: 30%;
 	left: 20%;
@@ -45,26 +94,4 @@ h2{
 	position: absolute;
 	top: 65%;
 	left: 60%;
-}
-
-#startAnsicht img {
-	/* SCALE */
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-	/* VERZÖGERUNG */
-	-webkit-transition: all 0.3s linear;
-	-moz-transition: all 0.3s linear;
-	-ms-transition: all 0.3s linear;
-	-o-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-}
-#startAnsicht img:hover {
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
-}
+}*/
