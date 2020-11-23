@@ -43,7 +43,7 @@
         var picture = document.createElement("img")
         picture.id = i
         try {
-            picture.src = "../img/Museum" + jsonObj[i].title.split(' ').join('_') + "_" + jsonObj[i].year.split(' ').join('_') + "_" + jsonObj[i].format.split(' ').join('_') + "_" + jsonObj[i].technic.split(' ').join('_') + "_MKachel.jpg"
+            picture.src = "../img/Museum/" + jsonObj[i].title.split(' ').join('_') + "_" + jsonObj[i].year.split(' ').join('_') + "_" + jsonObj[i].format.split(' ').join('_') + "_" + jsonObj[i].technic.split(' ').join('_') + "_MKachel.jpg"
         } catch (error) {
             break
         }
