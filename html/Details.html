@@ -120,7 +120,7 @@
 		return string.replace("Zeichnung ", "").replace("Oe", "Ö")
 	}
 
-	document.getElementById("Picture").src = "../img/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_mittel.jpg"
+	document.getElementById("Picture").src = "../img/CMS/" + jsonObj[bildZahl].title.split(' ').join('_') + "_" + jsonObj[bildZahl].year.split(' ').join('_') + "_" + jsonObj[bildZahl].format.split(' ').join('_') + "_" + jsonObj[bildZahl].technic.split(' ').join('_') + "_mittel.jpg"
 	document.getElementById("TitleContent").innerHTML = replaceTitle(jsonObj[bildZahl].title)
 	document.getElementById("YearContent").innerHTML = jsonObj[bildZahl].year
 	document.getElementById("FormatContent").innerHTML = jsonObj[bildZahl].format
@@ -143,7 +143,7 @@
 		}
 
 		for(var i = 1; i < 6; i++){
-			document.getElementById("Kachel" + i).src = "../img/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_Kachel.jpg"
+			document.getElementById("Kachel" + i).src = "../img/CMS/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_Kachel.jpg"
 			document.getElementById("Kachel" + i + "Link").href = "Details.html?var=" + jsonObj[technicIndexArr[tmp]].title
 
 			if(tmp+1 == technicIndexArr.length){
