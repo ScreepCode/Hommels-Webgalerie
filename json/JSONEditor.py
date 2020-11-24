@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 
 class JSONTool(object):
     def __init__(self):
-       self.dateipfad = os.path.abspath(".")+ "/ImgDetails.js"
+       self.dateipfad = os.path.abspath(".")+ "/Museum.js"
        #self.dateipfad = os.path.abspath(".")+ "/json.js"
        #self.dateipfad = "Users/detlefhommel/Desktop/WebSeites/json/ImgDetails.js"
     
@@ -68,23 +68,6 @@ class JSONTool(object):
         out += '        "]"'
         f.write(out)
 
-    # def deleteJSON(self, title):
-    #     jsonData = self.openJSON()
-    #     tempJSON = []
-
-    #     for x in jsonData:
-    #         if(x["title"] != title):
-    #             tempJSON.append(str(x))
-
-    #     f = open(self.dateipfad, "w")
-    #     out = '\nvar test = "[" + \n'
-    #     for x in tempJSON:
-    #         y = str(x).replace("'", '"')
-    #         out +=  "        '" + y + ",' + \n"
-    #     out = out[:-6] + "' + \n"   
-    #     out += '        "]"'
-    #     f.write(out)
-
     def deleteJSON(self, index):
         jsonData = self.openJSON()
         tempJSON = []
@@ -102,35 +85,6 @@ class JSONTool(object):
         out += '        "]"'
         f.write(out)
 
-    # def appendNewJSONWithPictureName(self, pictureName):
-
-    #     pictureNameSplit = pictureName.split("_")
-
-    #     title = ""
-    #     year = ""
-    #     format = ""
-    #     technic = ""
-
-    #     next = 0
-
-    #     for x in range(len(pictureNameSplit)):
-    #         if len(pictureNameSplit[x]) != 4:
-    #             title += pictureNameSplit[x] + " "
-    #         else:
-    #             next = x
-    #             break
-
-    #     year = pictureNameSplit[next]
-    #     next += 1
-    #     formatArr = pictureNameSplit[next:(next+4)]
-    #     format = " ".join(formatArr)
-    #     next += 4
-    #     technicArr = pictureNameSplit[next:]
-    #     technic = " ".join(technicArr)
-        
-    #     jsonData = '{"title": "'+ title[:-1] +'", "year": "'+ year +'", "format": "'+ format +'", "technic": "'+ technic +'"}'
-    #     self.appendNewJSON(jsonData)
-    
     def JSONWithPictureName(self, pictureName):
 
         pictureNameSplit = pictureName.split("_")
@@ -165,15 +119,29 @@ class JSONTool(object):
 
         return data
 
+    def changeDatei(self, id):
+        if id == 0:
+            self.dateipfad = os.path.abspath(".")+ "/Museum.js"
+        elif id == 1:
+            self.dateipfad = os.path.abspath(".")+ "/ImgDetails.js"
+
 class JSONOpen(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
+        self.tool = tool
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(100, 100, 400, 600)
+
+        #Combobox
+        self.cb = QComboBox(self)
+        self.cb.addItems(["Museum", "ImgDetails"])
+        self.cb.move(50, 50)
+        self.cb.resize(300, 20)
+        self.cb.currentIndexChanged.connect(self.tool.changeDatei)
         
         #Button
         self.button1 = QPushButton("Neuen JSON String hinzufügen", self)
@@ -193,12 +161,12 @@ class JSONOpen(QWidget):
         self.button4.resize(300, 50)
 
 class JSONAdd(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
         self.initUI()
 
-        self.tool = JSONTool()
+        self.tool = tool
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -266,12 +234,12 @@ class JSONAdd(QWidget):
             self.label5.setText("Bitte fülle alle Felder aus")
 
 class JSONEditTable(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
         self.initUI()
 
-        self.tool = JSONTool()
+        self.tool = tool
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -311,12 +279,12 @@ class JSONEditTable(QWidget):
         self.table.resizeColumnsToContents()
 
 class JSONEditString(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
         self.initUI()
 
-        self.tool = JSONTool()
+        self.tool = tool
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -394,12 +362,12 @@ class JSONEditString(QWidget):
             return False
 
 class JSONDelete(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
         self.initUI()
 
-        self.tool = JSONTool()
+        self.tool = tool
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -461,12 +429,12 @@ class JSONDelete(QWidget):
         self.addTableRow()
 
 class JSONAddWT(QWidget):
-    def __init__(self):
+    def __init__(self, tool):
         super().__init__()
         self.title = "JSON Parser"
         self.initUI()
 
-        self.tool = JSONTool()
+        self.tool = tool
 
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -563,12 +531,14 @@ class JSONAddWT(QWidget):
 if __name__ == "__main__":
     App = QApplication(sys.argv)
 
-    openGui = JSONOpen()
-    addGui = JSONAdd()
-    delGui = JSONDelete()
-    addwTGui = JSONAddWT()
-    editTableGui = JSONEditTable()
-    editStringGui = JSONEditString()
+    testTool = JSONTool()
+
+    openGui = JSONOpen(testTool)
+    addGui = JSONAdd(testTool)
+    delGui = JSONDelete(testTool)
+    addwTGui = JSONAddWT(testTool)
+    editTableGui = JSONEditTable(testTool)
+    editStringGui = JSONEditString(testTool)
 
     def on_click_add():
         addGui.show()
