@@ -8,6 +8,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+GEOMETRIE = [300, 200, 400, 600]
+GEOMETRIETABLE = [300, 200, 700, 600]
 
 class JSONTool(object):
     def __init__(self):
@@ -134,7 +136,7 @@ class JSONOpen(QWidget):
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 400, 600)
+        self.setGeometry(GEOMETRIE[0], GEOMETRIE[1], GEOMETRIE[2], GEOMETRIE[3])
 
         #Combobox
         self.cb = QComboBox(self)
@@ -170,7 +172,7 @@ class JSONAdd(QWidget):
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 400, 600)
+        self.setGeometry(GEOMETRIE[0], GEOMETRIE[1], GEOMETRIE[2], GEOMETRIE[3])
 
         #Textfelder
         self.textbox1 = QLineEdit(self)
@@ -243,7 +245,7 @@ class JSONEditTable(QWidget):
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 700, 600)
+        self.setGeometry(GEOMETRIETABLE[0], GEOMETRIETABLE[1], GEOMETRIETABLE[2], GEOMETRIETABLE[3])
 
         self.table = QTableWidget(self)
         self.table.resize(700, 500)
@@ -288,7 +290,7 @@ class JSONEditString(QWidget):
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 450, 600)
+        self.setGeometry(GEOMETRIE[0], GEOMETRIE[1], GEOMETRIE[2], GEOMETRIE[3])
 
         #Textfelder
         self.textbox1 = QLineEdit(self)
@@ -371,7 +373,7 @@ class JSONDelete(QWidget):
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 700, 600)
+        self.setGeometry(GEOMETRIETABLE[0], GEOMETRIETABLE[1], GEOMETRIETABLE[2], GEOMETRIETABLE[3])
 
         self.table = QTableWidget(self)
         self.table.resize(700, 500)
