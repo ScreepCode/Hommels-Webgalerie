@@ -177,5 +177,6 @@ var data = "[" +
         '{"title": "Eldagsen West", "year": "2007", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Bodelsberg Stadel I", "year": "2007", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Wassermuehle in Doehren", "year": "2002", "format": "30 x 24 cm", "technic": "Aquarell"},' + 
-        '{"title": "Wales; Bucht bei St Annes Head", "year": "2018", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"}' + 
+        '{"title": "Wales; Bucht bei St Annes Head", "year": "2018", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Elbphilharmonie II", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"}' + 
         "]"
