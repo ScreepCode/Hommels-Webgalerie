@@ -112,7 +112,7 @@ class JSONTool(object):
         technic = " ".join(technicArr)
 
         data = []
-        data.append(title)
+        data.append(title[:-1])
         data.append(year)
         data.append(format)
         data.append(technic)
