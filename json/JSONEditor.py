@@ -121,6 +121,22 @@ class JSONTool(object):
 
         return data
 
+    def changeOrder(self, original, new):
+        jsonData = self.openJSON()
+        
+        jsonData.insert(new, jsonData[original-1])
+        x = jsonData[original-1]
+        jsonData.remove(x)
+
+        f = open(self.dateipfad, "w")
+        out = '\nvar data = "[" + \n'
+        for x in jsonData:
+            y = str(x).replace("'", '"')
+            out +=  "        '" + y + ",' + \n"
+        out = out[:-6] + "' + \n"   
+        out += '        "]"'
+        f.write(out)
+
     def changeDatei(self, id):
         if id == 0:
             self.dateipfad = os.path.abspath(".")+ "/Museum.js"
