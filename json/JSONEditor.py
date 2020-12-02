@@ -13,7 +13,7 @@ GEOMETRIETABLE = [300, 200, 700, 600]
 
 class JSONTool(object):
     def __init__(self):
-       self.dateipfad = os.path.abspath(".")+ "/Museum.js"
+       self.dateipfad = os.path.abspath(".")+ "/ImgDetails.js"
        #self.dateipfad = os.path.abspath(".")+ "/json.js"
        #self.dateipfad = "Users/detlefhommel/Desktop/WebSeites/json/ImgDetails.js"
     
@@ -124,9 +124,9 @@ class JSONTool(object):
     def changeOrder(self, original, new):
         jsonData = self.openJSON()
         
-        jsonData.insert(new, jsonData[original-1])
-        x = jsonData[original-1]
+        x = jsonData[original]
         jsonData.remove(x)
+        jsonData.insert(new-1, x)
 
         f = open(self.dateipfad, "w")
         out = '\nvar data = "[" + \n'
@@ -138,9 +138,9 @@ class JSONTool(object):
         f.write(out)
 
     def changeDatei(self, id):
-        if id == 0:
+        if id == 1:
             self.dateipfad = os.path.abspath(".")+ "/Museum.js"
-        elif id == 1:
+        elif id == 0:
             self.dateipfad = os.path.abspath(".")+ "/ImgDetails.js"
 
 class JSONOpen(QWidget):
@@ -156,7 +156,7 @@ class JSONOpen(QWidget):
 
         #Combobox
         self.cb = QComboBox(self)
-        self.cb.addItems(["Museum", "ImgDetails"])
+        self.cb.addItems(["ImgDetails", "Museum"])
         self.cb.move(50, 50)
         self.cb.resize(300, 20)
         self.cb.currentIndexChanged.connect(self.tool.changeDatei)
@@ -177,6 +177,10 @@ class JSONOpen(QWidget):
         self.button4 = QPushButton("Neuen JSON String mit Bildtitel hinzufügen", self)
         self.button4.move(50, 400)
         self.button4.resize(300, 50)
+
+        self.button5 = QPushButton("Reihenfolge der Bilder ändern", self)
+        self.button5.move(50, 500)
+        self.button5.resize(300, 50)
 
 class JSONAdd(QWidget):
     def __init__(self, tool):
@@ -546,6 +550,51 @@ class JSONAddWT(QWidget):
         else:
             self.label5.setText("Bitte fülle alle Felder aus")
 
+class JSONChangeOrder(QWidget):
+    def __init__(self, tool):
+        super().__init__()
+        self.title = "JSON Parser"
+        self.initUI()
+
+        self.tool = tool
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(GEOMETRIETABLE[0], GEOMETRIETABLE[1], GEOMETRIETABLE[2], GEOMETRIETABLE[3])
+
+        self.table = QTableWidget(self)
+        self.table.resize(700, 500)
+        self.table.setColumnCount(4)
+        self.table.setHorizontalHeaderLabels(["Title", "Year", "Format", "Technic"])
+
+        self.button = QPushButton("Ausgewählte Reihe verschieben", self)
+        self.button.move(50, 500)
+        self.button.resize(300, 50)
+
+        self.lineEdit = QLineEdit(self)
+        self.lineEdit.move(350, 500)
+        self.lineEdit.resize(50, 50)
+        self.lineEdit.setValidator(QIntValidator())
+
+        self.homeButton = QPushButton("Home", self)
+        self.homeButton.move(0, 0)
+        self.homeButton.resize(60, 25)
+
+    def addTableRow(self):
+        while (self.table.rowCount() > 0):
+            self.table.removeRow(0)
+
+        jsonData = self.tool.openJSON()
+
+        for x in jsonData:
+            row = self.table.rowCount()
+            self.table.setRowCount(row+1)
+            self.table.setItem(row, 0, QTableWidgetItem(str(x["title"])))
+            self.table.setItem(row, 1, QTableWidgetItem(str(x["year"])))
+            self.table.setItem(row, 2, QTableWidgetItem(str(x["format"])))
+            self.table.setItem(row, 3, QTableWidgetItem(str(x["technic"])))
+        self.table.resizeColumnsToContents()
+
 if __name__ == "__main__":
     App = QApplication(sys.argv)
 
@@ -557,6 +606,7 @@ if __name__ == "__main__":
     addwTGui = JSONAddWT(testTool)
     editTableGui = JSONEditTable(testTool)
     editStringGui = JSONEditString(testTool)
+    changeGui = JSONChangeOrder(testTool)
 
     def on_click_add():
         addGui.show()
@@ -598,6 +648,10 @@ if __name__ == "__main__":
             addwTGui.hide()
         except:
             pass
+        try:
+            changeGui.hide()
+        except:
+            pass
 
     def on_click_editRow():
         indexes = editTableGui.table.selectionModel().selectedRows()
@@ -619,26 +673,44 @@ if __name__ == "__main__":
             timer = QTimer()
             timer.singleShot(2000, afterTimerTask)
 
+    def on_click_change():
+        changeGui.show()
+        changeGui.addTableRow()
+        openGui.hide()
+
     def afterTimerTask():
         editTableGui.show()
         editTableGui.addTableRow()
         editStringGui.hide()
         editStringGui.label5.setText("")
         editStringGui.button.setEnabled(True)
-
+    
+    def on_click_changeOrder():
+        indexes = changeGui.table.selectionModel().selectedRows()
+        if len(indexes) > 0:
+            for index in sorted(indexes):
+                #print('Row %d is selected' % index.row())
+                original = (int("%d" % index.row()))
+        new = int(changeGui.lineEdit.text())
+        print(original, new)
+        changeGui.tool.changeOrder(original, new)
+        changeGui.addTableRow()
 
     openGui.button1.clicked.connect(on_click_add)
     openGui.button2.clicked.connect(on_click_edit)
     openGui.button3.clicked.connect(on_click_del)
     openGui.button4.clicked.connect(on_click_edit_wT)
+    openGui.button5.clicked.connect(on_click_change)
     editTableGui.button.clicked.connect(on_click_editRow)
     editStringGui.button.clicked.connect(on_click_editString)
+    changeGui.button.clicked.connect(on_click_changeOrder)
 
     editTableGui.homeButton.clicked.connect(on_click_home)
     editStringGui.homeButton.clicked.connect(on_click_home)
     addGui.homeButton.clicked.connect(on_click_home)
     delGui.homeButton.clicked.connect(on_click_home)
     addwTGui.homeButton.clicked.connect(on_click_home)
+    changeGui.homeButton.clicked.connect(on_click_home)
 
 
 
