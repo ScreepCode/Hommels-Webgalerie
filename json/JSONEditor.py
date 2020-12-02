@@ -99,7 +99,7 @@ class JSONTool(object):
         next = 0
 
         for x in range(len(pictureNameSplit)):
-            if len(pictureNameSplit[x]) != 4:
+            if self.checkInt(pictureNameSplit[x]) == False:
                 title += pictureNameSplit[x] + " "
             else:
                 next = x
@@ -120,6 +120,13 @@ class JSONTool(object):
         data.append(technic)
 
         return data
+    
+    def checkInt(self, data):
+        try:
+            x = int(data)
+            return True
+        except:
+            return False
 
     def changeOrder(self, original, new):
         jsonData = self.openJSON()
