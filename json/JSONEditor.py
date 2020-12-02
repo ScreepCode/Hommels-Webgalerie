@@ -699,7 +699,6 @@ if __name__ == "__main__":
                 #print('Row %d is selected' % index.row())
                 original = (int("%d" % index.row()))
         new = int(changeGui.lineEdit.text())
-        print(original, new)
         changeGui.tool.changeOrder(original, new)
         changeGui.addTableRow()
 
