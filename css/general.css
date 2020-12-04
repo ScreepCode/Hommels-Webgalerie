@@ -1,11 +1,12 @@
 
 body{
-    background-color: #1E2022;
+    background-color: #362A10;
     max-width: 100%;
 }
 
 main{
     color: white ;
+    font-family: "Arial";
 }
 
 .navbar {
