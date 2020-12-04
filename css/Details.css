@@ -3,7 +3,7 @@
 	position: static;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	/*align-items: center;*/
 	margin-top: 3vw;
 	margin-bottom: 0.1vw;
 }
@@ -15,14 +15,22 @@
 }
 
 .DetailText h1{
-	font-size: 2vw;
+	font-size: 0.8vw;
+	font-style: italic;
 }
 
 .DetailText h2{
-	font-size: 1.5vw;
+	font-size: 2vw;
+	margin-top: 0;
+	margin-bottom: 5vw;
+}
+
+#TechnicContent{
+	margin-bottom: 0;
 }
 
 .DetailBilder{
+	margin-top: 1vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
