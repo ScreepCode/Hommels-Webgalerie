@@ -1,6 +1,6 @@
 
 body{
-    background-color: #362A10;
+    background-color: #1E2022;
     max-width: 100%;
 }
 
@@ -20,8 +20,9 @@ main{
     display: block;
     color: gainsboro;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     text-decoration: none;
 }
   
