@@ -23,7 +23,6 @@ var data = "[" +
         '{"title": "Langes Wald 1", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Langes Wald 2", "year": "2020", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Kiessee in Lahde", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Riehebach ueberschwemmt", "year": "2003", "format": "47 x 56 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Himmelsstudie mit durchbrechender Sonne", "year": "2004", "format": "100_x_80 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Huenengrab an der Kueste, Wales", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Maschinenbild I", "year": "2001", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
@@ -109,7 +108,6 @@ var data = "[" +
         '{"title": "Mauritius II, drohender Regen", "year": "2002", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Meszlinger Waeldchen mit Rapsfeld III", "year": "2004", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Salisbury Cathedral", "year": "2020", "format": "32 x 24 cm", "technic": "Oel auf Spanplatte"},' + 
-        '{"title": "Waldstudie Baumstaemme", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Walisische Kueste", "year": "2017", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
         '{"title": "Weser bei Regen, Lahder Ufer", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Zukunft", "year": "1982", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
@@ -117,7 +115,6 @@ var data = "[" +
         '{"title": "Feld am Wiehengebirge", "year": "1988", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Kleines Maschinenbild", "year": "2003", "format": "65 x 55 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Maschinenbild IV", "year": "2001", "format": "70 x 50 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Maschinenbild V", "year": "2001", "format": "70 x 50 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Sturm Waeldchen Meszlingen IV", "year": "1998", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Synagoge in Petershagen vor der Sanierung", "year": "1990", "format": "120 x 100 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Todtenhauser Christuskirche", "year": "2003", "format": "32 x 24 cm", "technic": "Aquarell"},' + 
@@ -176,7 +173,20 @@ var data = "[" +
         '{"title": "Ueberschwemmung Riehebach II", "year": "2004", "format": "48 x 56 cm", "technic": "Oel auf Spanplatte im Zierrahmen"},' + 
         '{"title": "Eldagsen West", "year": "2007", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Bodelsberg Stadel I", "year": "2007", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Krypta I Dom zu Speyer", "year": "2020", "format": "60 x 80 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Elbphilharmonie II", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"},' + 
+        '{"title": "Schnee auf dem Bodelsberg", "year": "2019", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Walisische Kueste IV", "year": "2017", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Christuskirche Todtenhausen IV", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Church with cemetery Camrose Wales", "year": "2017", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Weiden am Hiller Moor", "year": "1985", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
         '{"title": "Wassermuehle in Doehren", "year": "2002", "format": "30 x 24 cm", "technic": "Aquarell"},' + 
-        '{"title": "Wales; Bucht bei St Annes Head", "year": "2018", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Elbphilharmonie II", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"}' + 
+        '{"title": "Fueerwehrhaus Meszlingen", "year": "1985", "format": "24 x 18 cm", "technic": "Zeichnung Federzeichnung"},' + 
+        '{"title": "Hamburg Speicherstadt I", "year": "2020", "format": "30 x 40 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Petershagen Allee II am fruehen Morgen", "year": "2019", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Maaslingen an der Oesper", "year": "2020", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Bucht in Wales I", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
+        '{"title": "Wiese mit Wolke in Wales", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
+        '{"title": "Schlechtes Wetter vor Waliser Bucht", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
+        '{"title": "Petershagen Allee II am fruehen Morgen", "year": "2019", "format": "30 x 24 Oel", "technic": "auf Leinwand"}' + 
         "]"
