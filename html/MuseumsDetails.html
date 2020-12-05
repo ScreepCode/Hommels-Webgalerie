@@ -53,13 +53,15 @@
 			</div>
 			
 			<div class="DetailBilder">
-				<button id="left" onclick="setDetailPictures('-')"><</button>
+				<button id="left" onclick="setDetailPictures('-')">◀</button>
 				<a id="Kachel1Link"><img id="Kachel1" src=""></a>
 				<a id="Kachel2Link"><img id="Kachel2" src=""></a>
 				<a id="Kachel3Link"><img id="Kachel3" src=""></a>
 				<a id="Kachel4Link"><img id="Kachel4" src=""></a>
 				<a id="Kachel5Link"><img id="Kachel5" src=""></a>
-				<button id="right" onclick="setDetailPictures('+')">></button>
+				<a id="Kachel6Link"><img id="Kachel6" src=""></a>
+				<a id="Kachel7Link"><img id="Kachel7" src=""></a>
+				<button id="right" onclick="setDetailPictures('+')">▶</button>
 			</div>
 			
         </main>
@@ -129,13 +131,13 @@
 			akt_mitte -= 1
 		}
 
-		tmp = akt_mitte - 2
+		tmp = akt_mitte - 3
 
 		if(tmp < 0){
 			tmp = technicIndexArr.length+tmp
 		}
 
-		for(var i = 1; i < 6; i++){
+		for(var i = 1; i < 8; i++){
 			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_MK.jpg"
 			document.getElementById("Kachel" + i + "Link").href = "MuseumsDetails.html?var=" + jsonObj[technicIndexArr[tmp]].title
 
