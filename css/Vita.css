@@ -14,9 +14,9 @@ body{
 #startAnsicht{
 	position: static;
     display: flex;
-    margin-bottom: 20px;
 
     color: black;
+    padding-top: 7vw;
 }
 
 #startAnsicht p{
@@ -28,25 +28,22 @@ body{
 }
 
 .Vita{
-    margin-top: 9vw;
-    margin-left: 5vw;
+    margin-left: 10vw;
 }
 
 #VitaPic{
     position: absolute;
     height: 10vw;
-    margin-top: 2vw;
-    margin-left: 10vw;
+    margin-top: 1.6vw;
+    margin-left: 15vw;
 }
 
 .Ausstellungen{
-    margin-top: 9vw;
-    margin-left: 17vw;
+    margin-left: 16vw;
 }
 
 .Rest{
-    margin-top: 9vw;
-    margin-left: 20vw;
+    margin-left: 16vw;
 }
 
 .Rest div{
