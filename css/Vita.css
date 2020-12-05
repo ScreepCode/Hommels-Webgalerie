@@ -31,11 +31,19 @@ body{
     margin-left: 10vw;
 }
 
+.Vita #V0{
+    margin-top: 7vw;
+}
+
 #VitaPic{
     position: absolute;
     height: 10vw;
-    margin-top: 1.6vw;
+    margin-top: 7vw;
     margin-left: 15vw;
+}
+
+#MuseumsHead2{
+    font-style: italic;
 }
 
 .Ausstellungen{
@@ -46,6 +54,6 @@ body{
     margin-left: 16vw;
 }
 
-.Rest div{
-    margin-bottom: 10vw;
+.Rest #Museum{
+    margin-bottom: 6.5vw;
 }
