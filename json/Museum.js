@@ -9,5 +9,6 @@ var data = "[" +
         '{"title": "Maschinenbild VI", "year": "2001", "format": "50 x 70 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Es wird nie wieder so", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Hof mit Himmel", "year": "2001", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
-        '{"title": "Kopfweiden in der Joesser Aue", "year": "2003", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"}' + 
+        '{"title": "Kopfweiden in der Joesser Aue", "year": "2003", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Panoptikum II", "year": "1983", "format": "32 x 24 cm", "technic": "Zeichnung Federzeichnung"}' + 
         "]"
