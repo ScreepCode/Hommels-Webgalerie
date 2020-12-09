@@ -96,16 +96,7 @@
 	for (var i = 0; i < jsonLength; i++){
 		if(jsonObj[i].title == pictureName){
 			bildZahl = i
-		}
-	}
-
-	var technicIndexArr = []
-	for(var i = 0; i < jsonLength; i++){
-		if(jsonObj[i].technic.substring(0, 2) == jsonObj[bildZahl].technic.substring(0,2)){
-			technicIndexArr.push(i)
-		}
-		if(i == bildZahl){
-			var akt_mitte = technicIndexArr.length-1
+			akt_mitte = i
 		}
 	}
 
@@ -134,14 +125,18 @@
 		tmp = akt_mitte - 3
 
 		if(tmp < 0){
-			tmp = technicIndexArr.length+tmp
+			tmp = jsonLength+tmp
 		}
 
 		for(var i = 1; i < 8; i++){
-			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[technicIndexArr[tmp]].title.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].year.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].format.split(' ').join('_') + "_" + jsonObj[technicIndexArr[tmp]].technic.split(' ').join('_') + "_MK.jpg"
-			document.getElementById("Kachel" + i + "Link").href = "MuseumsDetails.html?var=" + jsonObj[technicIndexArr[tmp]].title
+			// console.log(jsonObj[tmp].title.split(' ').join('_'))
+			// console.log(jsonObj[tmp].year.split(' ').join('_'))
+			// console.log(jsonObj[tmp].format.split(' ').join('_'))
+			// console.log(jsonObj[tmp].technic.split(' ').join('_'))
+			document.getElementById("Kachel" + i).src = "../img/Museum/" + jsonObj[tmp].title.split(' ').join('_') + "_" + jsonObj[tmp].year.split(' ').join('_') + "_" + jsonObj[tmp].format.split(' ').join('_') + "_" + jsonObj[tmp].technic.split(' ').join('_') + "_MK.jpg"
+			document.getElementById("Kachel" + i + "Link").href = "MuseumsDetails.html?var=" + jsonObj[tmp].title
 
-			if(tmp+1 == technicIndexArr.length){
+			if(tmp+1 == jsonLength){
 				tmp = 0
 			}
 			else{
