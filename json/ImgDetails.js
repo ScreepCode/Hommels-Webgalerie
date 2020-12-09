@@ -27,6 +27,7 @@ var data = "[" +
         '{"title": "Huenengrab an der Kueste, Wales", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Maschinenbild I", "year": "2001", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Maschinenbild ZARA, CD-Cover", "year": "1995", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Kleines Maschinenbild", "year": "2003", "format": "65 x 55 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Maschinenbild II", "year": "2001", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Himmelsstudie", "year": "2004", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Mein Schulweg", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
@@ -54,7 +55,7 @@ var data = "[" +
         '{"title": "Weser bei Holzminden", "year": "2020", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Weserueberschwemmung bei Petershagen", "year": "2009", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Am Nordholz II", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Maison prés de Carnac, Bretagne", "year": "1997", "format": "120 x 100 cm", "technic": "Oel auf Spanplatte"},' + 
+        '{"title": "Maison bei Carnac, Bretagne", "year": "1997", "format": "120 x 100 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Windheimer Kirche", "year": "2000", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Wolkenstudie", "year": "2018", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Die Sonne kommt durch bei Emden", "year": "2001", "format": "40 x 30 cm", "technic": "Aquarell"},' + 
@@ -113,8 +114,6 @@ var data = "[" +
         '{"title": "Zukunft", "year": "1982", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Wiehengebirgsstudie mit Siedlung", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Feld am Wiehengebirge", "year": "1988", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Kleines Maschinenbild", "year": "2003", "format": "65 x 55 cm", "technic": "Oel auf Spanplatte"},' + 
-        '{"title": "Maschinenbild IV", "year": "2001", "format": "70 x 50 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Sturm Waeldchen Meszlingen IV", "year": "1998", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Synagoge in Petershagen vor der Sanierung", "year": "1990", "format": "120 x 100 cm", "technic": "Oel auf Spanplatte"},' + 
         '{"title": "Todtenhauser Christuskirche", "year": "2003", "format": "32 x 24 cm", "technic": "Aquarell"},' + 
@@ -188,5 +187,40 @@ var data = "[" +
         '{"title": "Bucht in Wales I", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
         '{"title": "Wiese mit Wolke in Wales", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
         '{"title": "Schlechtes Wetter vor Waliser Bucht", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
-        '{"title": "Petershagen Allee II am fruehen Morgen", "year": "2019", "format": "30 x 24 Oel", "technic": "auf Leinwand"}' + 
+        '{"title": "Blick zur Allee III aufziehender Regen", "year": "2018", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Sonnenaufgang am Anleger Petershagen", "year": "2019", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Welsh mountains I", "year": "2018", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Bodelsberg Stadel II", "year": "2007", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Bremerhaven Mole", "year": "2007", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Fruehnebel an der Altmuehl", "year": "2020", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Regen vom Meer her II, Mauritius", "year": "2005", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Treppenstieg mit Allee I", "year": "2018", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Windheimer Kirche", "year": "2002", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Zwei einsame Kopfweiden im Schnee", "year": "1998", "format": "30 x 24 cm", "technic": "Oel auf Karton"},' + 
+        '{"title": "Schneesturm am Gruenten im Allgaeu II", "year": "2010", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Bei Fischerhude an der Wuemme", "year": "2017", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Bodelsberg Stadel III", "year": "2007", "format": "30 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Baumstudie I bei Kuehrstedt", "year": "1997", "format": "18 x 24 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Baumstudie II bei Kuehrstedt", "year": "1997", "format": "18 x 24 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Baumstudie III bei Kuehrstedt", "year": "1997", "format": "18 x 24 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Baumstudie IV bei Kuehrstedt", "year": "1997", "format": "18 x 24 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Blick ueber verschneite Auebruecke", "year": "1985", "format": "18 x 24 cm", "technic": "Aquarell"},' + 
+        '{"title": "Kopfweidenpaar bei Buchholz III", "year": "2002", "format": "18 x 24 cm", "technic": "Aquarell"},' + 
+        '{"title": "Kopfweiden in der Weser bei Buchholz I", "year": "2002", "format": "18 x 24 cm", "technic": "Aquarell"},' + 
+        '{"title": "Kopfweiden in der Weser bei Buchholz II", "year": "2002", "format": "18 x 24 cm", "technic": "Aquarell"},' + 
+        '{"title": "Petershaeger Schloss Abendstimmung", "year": "2002", "format": "18 x 24 cm", "technic": "Aquarell"},' + 
+        '{"title": "Torfballen im Uchter Moor", "year": "2001", "format": "13 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
+        '{"title": "Abendwald", "year": "1985", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Baumwurzeln", "year": "2001", "format": "18 x 13 cm", "technic": "Zeichnung Federzeichnung mit Pastell gehoeht"},' + 
+        '{"title": "Blick uebers Hiller Moor", "year": "1998", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Christuskirche Todtenhausen II", "year": "2001", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Kirche Windheim III", "year": "1982", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Kirche Windheim IV", "year": "1982", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Moorbrand bei Aurich", "year": "1984", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Schloss Petershagen vom Lahder Ufer", "year": "2001", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Sommer an der Gehle", "year": "1999", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Vorm Deich bei Oxstedt", "year": "2001", "format": "24 x 18 cm", "technic": "Oel auf Karton"},' + 
+        '{"title": "Waeldchen am Abend, Meszlingen", "year": "2001", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Weide im Morgennebel", "year": "2001", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
+        '{"title": "Weidenreihe bei Lohhof", "year": "1998", "format": "24 x 18 cm", "technic": "Aquarell"}' + 
         "]"
