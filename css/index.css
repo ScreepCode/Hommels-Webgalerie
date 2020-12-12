@@ -56,19 +56,19 @@ body{
 #LinksDiv #VI{
 	position: absolute;
 	bottom: 4vw;
-	left: 15vw;
+	left: 17vw;
 }
 
 #LinksDiv #T{
 	position: absolute;
 	bottom: 4vw;
-	left: 40vw;
+	left: 39vw;
 }
 
 #LinksDiv #M{
 	position: absolute;
 	bottom: 4vw;
-	right: 15vw;
+	right: 21vw;
 }
 
 #LinksDiv a:hover{
