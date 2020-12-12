@@ -17,7 +17,7 @@
 
 			<div class="navbar">
 				<a href="index.html">Home</a>
-				<a href="javascript:history.go(-1)" class="right">zurück</a>
+				<a href="" class="right">zurück</a>
 			</div>
 
             <div id="startAnsicht">
@@ -107,7 +107,20 @@
 		}
 	}
 
-	
+	var aktTechnik = jsonObj[bildZahl].technic
+	console.log(aktTechnik.substring(0,2))
+	if(aktTechnik.substring(0,2)=="Oe"){
+		aktTechnik = "Oel"
+	}
+	else if(aktTechnik.substring(0,2)=="Ze"){
+		aktTechnik = "Zeichnung"
+	}
+	else if(aktTechnik.substring(0,2)=="Aq"){
+		aktTechnik = "Aquarell"
+	}
+	a = "CMS.html?var=" + aktTechnik
+	document.getElementsByClassName("right")[0].href = a
+
 
 	console.log(pictureName)
 
