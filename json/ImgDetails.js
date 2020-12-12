@@ -7,7 +7,7 @@ var data = "[" +
         '{"title": "Gletschereis", "year": "2017", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Wegbiegung bei Morhoff I", "year": "2020", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Lichtung", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
-        '{"title": "Messlingen - Blick aufs Dorf", "year": "2007", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Meszlingen - Blick aufs Dorf", "year": "2007", "format": "24 x 18 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Nebelmorgen bei Wegholm", "year": "2011", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Ueberschwemmung an der Lahder Aue", "year": "2019", "format": "40 x 30 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Schneesturm Gruentensee, Allgaeu", "year": "2016", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
@@ -42,7 +42,7 @@ var data = "[" +
         '{"title": "Regentag - Wegbiegung bei Morhoff", "year": "2020", "format": "80 x 60 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Schluesselburger Scheune I - Detail", "year": "2012", "format": "24 x 18 cm", "technic": "Oel auf Karton"},' + 
         '{"title": "Schluesselburger Scheune II - Detail", "year": "2012", "format": "24 x 18 cm", "technic": "Oel auf Karton"},' + 
-        '{"title": "Schober bei Wald, Allgäu", "year": "2017", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
+        '{"title": "Schober bei Wald, Allgaeu", "year": "2017", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Todtenhauser Kirche im Schnee", "year": "2014", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Vereister Kiessee bei Frille", "year": "2003", "format": "32 x 24 cm", "technic": "Oel auf Leinwand"},' + 
         '{"title": "Meszlinger Waeldchen mit Rapsfeld I", "year": "2000", "format": "80 x 60 cm", "technic": "Oel auf Spanplatte"},' + 
@@ -150,7 +150,7 @@ var data = "[" +
         '{"title": "Ingwerknolle", "year": "2001", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
         '{"title": "Kirche Schluesselburg", "year": "2020", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
         '{"title": "Kirche Heimsen", "year": "2020", "format": "24 x 18 cm", "technic": "Aquarell"},' + 
-        '{"title": "Physik fuer Geisteswissenschaftler - das Photon", "year": "2002", "format": "24 x 18 cm", "technic": "Zeichnung Federzeichnung"},' + 
+        '{"title": "Physik fuer Geisteswissenschaftler - Das Photon", "year": "2002", "format": "24 x 18 cm", "technic": "Zeichnung Federzeichnung"},' + 
         '{"title": "Rein koerperlich", "year": "1966", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
         '{"title": "Rueckenstudie", "year": "1966", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
         '{"title": "Schweinestudie", "year": "1979", "format": "24 x 18 cm", "technic": "Zeichnung Bleistiftzeichnung"},' + 
